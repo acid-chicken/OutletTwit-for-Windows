@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:OutletTwit"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary Source="Generic.xaml" />
     </Application.Resources>
 </Application>

@@ -4,9 +4,89 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OutletTwit"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        mc:Ignorable="d" Style="{StaticResource WindowChromeStyle}"
+        Title="MainWindow" Height="350" Width="525" Background="#FFEEEEEE">
     <Grid>
-        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="48" />
+                <ColumnDefinition Width="128" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Column="0" Background="#FFF" BorderThickness="0,0,1,0">
+                <Border.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#B29C9C9C" Offset="0"/>
+                        <GradientStop Color="#B2FFFFFF" Offset="0.895"/>
+                        <GradientStop Color="#B2FFFFFF" Offset="0.987"/>
+                    </LinearGradientBrush>
+                </Border.BorderBrush>
+                
+                <StackPanel Margin="0,56,0,5">
+                    <Ellipse Width="32" Height="32">
+                        <Ellipse.Fill>
+                            <ImageBrush>
+                                <ImageBrush.ImageSource>
+                                    <BitmapImage DecodePixelWidth="32" DecodePixelHeight="32"
+                                                 UriSource="Resources/logo.png" />
+                                </ImageBrush.ImageSource>
+                            </ImageBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Column="1" Background="#FFF" BorderThickness="0,0,10,0">
+                <Border.BorderBrush>
+                    <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                        <GradientStop Color="#E5646464" Offset="0"/>
+                        <GradientStop Offset="1" Color="#00646464"/>
+                        <GradientStop Color="#7F646464" Offset="0.523"/>
+                    </LinearGradientBrush>
+                </Border.BorderBrush>
+                
+                <StackPanel Margin="0,56,0,5">
+                    <Label BorderBrush="#39F" Foreground="#555" Padding="10,5" BorderThickness="3,0,0,0">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe UI Symbol" FontSize="18"
+                                       VerticalAlignment="Center" Margin="0,0,0,1">🏠</TextBlock>
+                            <TextBlock VerticalAlignment="Center" Margin="5,0,0,0">ホーム</TextBlock>
+                        </StackPanel>
+                    </Label>
+                    <Label BorderBrush="Transparent" Foreground="#555" Padding="10,5" BorderThickness="3,0,0,0">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe UI Symbol" FontSize="18"
+                                       VerticalAlignment="Center" Margin="0,0,0,1">🔔</TextBlock>
+                            <TextBlock VerticalAlignment="Center" Margin="5,0,0,0">通知</TextBlock>
+                        </StackPanel>
+                    </Label>
+                </StackPanel>
+            </Border>
+        </Grid>
+
+        <Border Background="#FFF" Height="56" VerticalAlignment="Top" BorderThickness="0,0,0,10">
+            <Border.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#CC6E6E6E" Offset="0"/>
+                    <GradientStop Offset="1" Color="#006E6E6E"/>
+                    <GradientStop Color="#4C6E6E6E" Offset="0.544"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            
+            <DockPanel Margin="15,0">
+                <Image DockPanel.Dock="Left" Margin="7">
+                    <Image.Source>
+                        <BitmapImage DecodePixelWidth="32" DecodePixelHeight="32"
+                                     UriSource="Resources/logo.png" />
+                    </Image.Source>
+                </Image>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Image Source="Resources/minimize.png" Width="24" />
+                    <Image Source="Resources/maximize.png" Width="24" />
+                    <Image Source="Resources/close.png" Width="24" />
+                </StackPanel>
+            </DockPanel>
+        </Border>
     </Grid>
 </Window>
