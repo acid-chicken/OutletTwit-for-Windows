@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OutletTwit"
         mc:Ignorable="d" Style="{StaticResource WindowChromeStyle}"
-        Title="MainWindow" Height="350" Width="525" Background="#FFEEEEEE">
-    <Grid>
+        Title="MainWindow" Height="350" Width="525"
+        Background="#FFEEEEEE" StateChanged="OnWindowStateChanged">
+    <Grid x:Name="LayoutRoot">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="48" />

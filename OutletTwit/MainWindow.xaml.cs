@@ -24,5 +24,26 @@ namespace OutletTwit
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// ウィンドウの状態（最大化、最小化）が変わったときに発生するイベントです。
+        /// WindowChromeのフレーム描画に伴うウィンドウサイズのずれを修正します。
+        /// </summary>
+        /// <param name="sender">イベントの呼び出し元</param>
+        /// <param name="e">イベント引数</param>
+        private void OnWindowStateChanged(object sender, EventArgs e)
+        {
+            // 現在のウィンドウ状態により分岐
+            switch (WindowState)
+            {
+                case WindowState.Maximized: // 最大化されたとき
+                    LayoutRoot.Margin = new Thickness(7); // レイアウトルート（Grid）に7pxの余白を与える
+                    break;
+
+                default: // それ以外のとき
+                    LayoutRoot.Margin = new Thickness(0); // 余白を0pxにする
+                    break;
+            }
+        }
     }
 }
