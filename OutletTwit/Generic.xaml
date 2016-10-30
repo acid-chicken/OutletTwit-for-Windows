@@ -24,7 +24,7 @@
                 <Trigger.ExitActions>
                     <BeginStoryboard>
                         <Storyboard>
-                            <ColorAnimation To="#AAA" Duration="00:00:00.200"
+                            <ColorAnimation To="#DDD" Duration="00:00:00.200"
                                             Storyboard.TargetProperty="Foreground.Color" />
                         </Storyboard>
                     </BeginStoryboard>
