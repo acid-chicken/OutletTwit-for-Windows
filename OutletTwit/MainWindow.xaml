@@ -1,4 +1,4 @@
-﻿<Window x:Class="OutletTwit.MainWindow"
+﻿<Window x:Class="OutletTwit.Core.UI.Forms.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -87,21 +87,23 @@
                     <Button Cursor="Hand" Click="OnMinimizeButtonClicked">
                         <Button.Template>
                             <ControlTemplate>
-                                <Image Source="Resources/minimize.png" Width="24" />
+                                <Label Style="{StaticResource WindowActionButtonStyle}"></Label>
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
                     <Button Cursor="Hand" Click="OnMaximizeButtonClicked">
                         <Button.Template>
                             <ControlTemplate>
-                                <Image Source="Resources/maximize.png" Width="24" />
+                                <Label Style="{StaticResource WindowActionButtonStyle}"
+                                       Padding="1,0,0,1" FontSize="19" Content="" BorderBrush="#39F" />
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
                     <Button Cursor="Hand" Click="OnCloseButtonClicked">
                         <Button.Template>
                             <ControlTemplate>
-                                <Image Source="Resources/close.png" Width="24" />
+                                <Label Style="{StaticResource WindowActionButtonStyle}"
+                                       Padding="0,0,0,1" FontSize="21"></Label>
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
