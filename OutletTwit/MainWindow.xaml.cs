@@ -45,5 +45,52 @@ namespace OutletTwit
                     break;
             }
         }
+
+        /// <summary>
+        /// 最小化ボタンがクリックされたときのイベントを処理します。
+        /// ウィンドウを最小化状態に変更します。
+        /// </summary>
+        /// <param name="sender">イベントの呼び出し元</param>
+        /// <param name="e">イベント引数</param>
+        private void OnMinimizeButtonClicked(object sender, RoutedEventArgs e)
+        {
+            // ウィンドウを最小化状態にする
+            WindowState = WindowState.Minimized;            
+        }
+
+        /// <summary>
+        /// 最大化/元に戻すボタンがクリックされたときのイベントを処理します。
+        /// ウィンドウを最大化状態または通常の状態に変更します。
+        /// </summary>
+        /// <param name="sender">イベントの呼び出し元</param>
+        /// <param name="e">イベント引数</param>
+        private void OnMaximizeButtonClicked(object sender, RoutedEventArgs e)
+        {
+            // 現在のウィンドウ状態により分岐
+            switch (WindowState)
+            {
+                case WindowState.Maximized: // 最大化状態のとき
+                    WindowState = WindowState.Normal; // 通常状態に戻す
+                    break;
+
+                default: // それ以外のとき
+                    WindowState = WindowState.Maximized; // 最大化状態にする
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// 閉じるボタンがクリックされたときのイベントを処理します。
+        /// ウィンドウを閉じます。
+        /// </summary>
+        /// <param name="sender">イベントの呼び出し元</param>
+        /// <param name="e">イベント引数</param>
+        private void OnCloseButtonClicked(object sender, RoutedEventArgs e)
+        {
+            // 何らかの終了処理が必要な場合は、ここに追加してください。
+
+            // ウィンドウを閉じる
+            Close();
+        }
     }
 }

@@ -82,10 +82,29 @@
                                      UriSource="Resources/logo.png" />
                     </Image.Source>
                 </Image>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                    <Image Source="Resources/minimize.png" Width="24" />
-                    <Image Source="Resources/maximize.png" Width="24" />
-                    <Image Source="Resources/close.png" Width="24" />
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right"
+                            WindowChrome.IsHitTestVisibleInChrome="True">
+                    <Button Cursor="Hand" Click="OnMinimizeButtonClicked">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source="Resources/minimize.png" Width="24" />
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button Cursor="Hand" Click="OnMaximizeButtonClicked">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source="Resources/maximize.png" Width="24" />
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button Cursor="Hand" Click="OnCloseButtonClicked">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source="Resources/close.png" Width="24" />
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
                 </StackPanel>
             </DockPanel>
         </Border>
