@@ -37,4 +37,9 @@
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Foreground" Value="#DDD" />
     </Style>
+
+    <ControlTemplate x:Key="TweetActionButtonTemplate" TargetType="{x:Type Button}">
+        <Label Content="{TemplateBinding Content}" Foreground="#DDD" FontWeight="Bold"
+               FontFamily="Resources/#Material Icons" FontSize="{TemplateBinding FontSize}" />
+    </ControlTemplate>
 </ResourceDictionary>
