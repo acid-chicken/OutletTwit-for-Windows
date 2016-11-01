@@ -79,8 +79,8 @@
                             </Ellipse.Fill>
                         </Ellipse>
                         <StackPanel Margin="7,0">
-                            <TextBlock FontWeight="Bold">OutletTwit</TextBlock>
-                            <TextBlock Margin="0,1">
+                            <TextBlock FontWeight="Bold" TextWrapping="Wrap">OutletTwit</TextBlock>
+                            <TextBlock Margin="0,1" TextWrapping="Wrap">
                                 ツイートテスト
                                 <LineBreak />
                                 ツイートテスト
