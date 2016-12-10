@@ -38,10 +38,14 @@ namespace OutletTwit.Core.UI.Forms
             {
                 case WindowState.Maximized: // 最大化されたとき
                     LayoutRoot.Margin = new Thickness(7); // レイアウトルート（Grid）に7pxの余白を与える
+                    MaximizeButtonMaximizeImage.Visibility = Visibility.Collapsed; // 最大化ボタンを非表示にする
+                    MaximizeButtonDefaultImage.Visibility = Visibility.Visible; // 通常化ボタンを表示する
                     break;
 
                 default: // それ以外のとき
                     LayoutRoot.Margin = new Thickness(0); // 余白を0pxにする
+                    MaximizeButtonMaximizeImage.Visibility = Visibility.Visible; // 最大化ボタンを表示する
+                    MaximizeButtonDefaultImage.Visibility = Visibility.Collapsed; // 通常化ボタンを非表示にする
                     break;
             }
         }

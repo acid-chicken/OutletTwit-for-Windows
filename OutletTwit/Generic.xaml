@@ -12,32 +12,26 @@
         <Setter Property="BorderThickness" Value="1" />
     </Style>
 
-    <Style x:Key="WindowActionButtonStyle" TargetType="{x:Type Label}">
+    <Style x:Key="WindowActionButtonStyle" TargetType="{x:Type Image}">
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
                 <Trigger.EnterActions>
                     <BeginStoryboard>
                         <Storyboard>
-                            <ColorAnimation To="#777" Duration="00:00:00.300"
-                                            Storyboard.TargetProperty="Foreground.Color" />
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0.5" To="0.75" Duration="00:00:00.250" />
                         </Storyboard>
                     </BeginStoryboard>
                 </Trigger.EnterActions>
                 <Trigger.ExitActions>
                     <BeginStoryboard>
                         <Storyboard>
-                            <ColorAnimation To="#DDD" Duration="00:00:00.200"
-                                            Storyboard.TargetProperty="Foreground.Color" />
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0.75" To="0.5" Duration="00:00:00.250" />
                         </Storyboard>
                     </BeginStoryboard>
                 </Trigger.ExitActions>
             </Trigger>
         </Style.Triggers>
-        <Setter Property="FontFamily" Value="Resources/#Material Icons" />
-        <Setter Property="FontSize" Value="20" />
-        <Setter Property="Padding" Value="0" />
-        <Setter Property="VerticalContentAlignment" Value="Center" />
-        <Setter Property="Foreground" Value="#DDD" />
+        <Setter Property="Opacity" Value="0.5" />
     </Style>
 
     <ControlTemplate x:Key="TweetActionButtonTemplate" TargetType="{x:Type Button}">
