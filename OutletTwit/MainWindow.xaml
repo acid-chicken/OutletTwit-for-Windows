@@ -84,13 +84,16 @@
                             </TextBlock>
                             <StackPanel Orientation="Horizontal">
                                 <Button Template="{StaticResource TweetActionButtonTemplate}">
-                                    <Image Source="Resources/reply.png" Width="24" Opacity="0.5"/>
+                                    <Image Source="Resources/reply.png" Width="24" Style="{StaticResource ButtonStyle}" />
                                 </Button>
                                 <Button Template="{StaticResource TweetActionButtonTemplate}">
-                                    <Image Source="Resources/retweet.png" Width="24" Opacity="0.5"/>
+                                    <Image Source="Resources/retweet.png" Width="24" Style="{StaticResource ButtonStyle}" />
                                 </Button>
                                 <Button Template="{StaticResource TweetActionButtonTemplate}">
-                                    <Image Source="Resources/favorite_heart_skeleton.png" Width="24" Opacity="0.5"/>
+                                    <Image Source="Resources/quote.png" Width="24" Style="{StaticResource ButtonStyle}" />
+                                </Button>
+                                <Button Template="{StaticResource TweetActionButtonTemplate}">
+                                    <Image Source="Resources/favorite_heart_skeleton.png" Width="24" Style="{StaticResource ButtonStyle}" />
                                 </Button>
                             </StackPanel>
                         </StackPanel>
@@ -120,28 +123,28 @@
                     <Button Cursor="Hand" Click="OnMinimizeButtonClicked">
                         <Button.Template>
                             <ControlTemplate>
-                                <Image Source="Resources/minimize.png" Width="24" Style="{StaticResource WindowActionButtonStyle}" />
+                                <Image Source="Resources/minimize.png" Width="24" Style="{StaticResource ButtonStyle}" />
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
                     <Button Name="MaximizeButtonMaximizeImage" Cursor="Hand" Click="OnMaximizeButtonClicked" Width="24" Visibility="Visible">
                         <Button.Template>
                             <ControlTemplate>
-                                <Image Source="Resources/maximize.png" Width="24" Style="{StaticResource WindowActionButtonStyle}" />
+                                <Image Source="Resources/maximize.png" Width="24" Style="{StaticResource ButtonStyle}" />
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
                     <Button Name="MaximizeButtonDefaultImage" Cursor="Hand" Click="OnMaximizeButtonClicked" Width="24" Visibility="Collapsed">
                         <Button.Template>
                             <ControlTemplate>
-                                <Image Source="Resources/default.png" Width="24" Style="{StaticResource WindowActionButtonStyle}" />
+                                <Image Source="Resources/default.png" Width="24" Style="{StaticResource ButtonStyle}" />
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
                     <Button Cursor="Hand" Click="OnCloseButtonClicked">
                         <Button.Template>
                             <ControlTemplate>
-                                <Image Source="Resources/close.png" Width="24" Style="{StaticResource WindowActionButtonStyle}" />
+                                <Image Source="Resources/close.png" Width="24" Style="{StaticResource ButtonStyle}" />
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
