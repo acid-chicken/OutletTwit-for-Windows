@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:OutletTwit"
         mc:Ignorable="d" Style="{StaticResource WindowChromeStyle}"
         Title="OutletTwit for Windows" Height="480" Width="640"
-        Background="#FFEEEEEE" StateChanged="OnWindowStateChanged" WindowStartupLocation="CenterScreen">
+        Background="#FFEEEEEE" StateChanged="OnWindowStateChanged" WindowStartupLocation="CenterScreen" Icon="Resources/logo.png">
     <Grid x:Name="LayoutRoot">
         <Grid>
             <Grid.ColumnDefinitions>
