@@ -76,10 +76,16 @@
                 <Trigger.EnterActions>
                     <BeginStoryboard>
                         <Storyboard>
-                            <DoubleAnimation Storyboard.TargetName="BlackStop"
+                            <DoubleAnimation Storyboard.TargetName="EmptyBlackStop"
+                                             Storyboard.TargetProperty="Offset"
+                                             To="0" Duration="0:0:0.2" />
+                            <DoubleAnimation Storyboard.TargetName="EmptyTransparentStop"
+                                             Storyboard.TargetProperty="Offset"
+                                             To="0" Duration="0:0:0.2" />
+                            <DoubleAnimation Storyboard.TargetName="FillBlackStop"
                                              Storyboard.TargetProperty="Offset"
                                              To="1" Duration="0:0:0.2" />
-                            <DoubleAnimation Storyboard.TargetName="TransparentStop"
+                            <DoubleAnimation Storyboard.TargetName="FillTransparentStop"
                                              Storyboard.TargetProperty="Offset"
                                              To="1" Duration="0:0:0.2" />
                         </Storyboard>
@@ -88,10 +94,16 @@
                 <Trigger.ExitActions>
                     <BeginStoryboard>
                         <Storyboard FillBehavior="Stop">
-                            <DoubleAnimation Storyboard.TargetName="BlackStop"
+                            <DoubleAnimation Storyboard.TargetName="EmptyBlackStop"
+                                             Storyboard.TargetProperty="Offset"
+                                             To="1" Duration="0:0:0.2" />
+                            <DoubleAnimation Storyboard.TargetName="EmptyTransparentStop"
+                                             Storyboard.TargetProperty="Offset"
+                                             To="1" Duration="0:0:0.2" />
+                            <DoubleAnimation Storyboard.TargetName="FillBlackStop"
                                              Storyboard.TargetProperty="Offset"
                                              To="0" Duration="0:0:0.2" />
-                            <DoubleAnimation Storyboard.TargetName="TransparentStop"
+                            <DoubleAnimation Storyboard.TargetName="FillTransparentStop"
                                              Storyboard.TargetProperty="Offset"
                                              To="0" Duration="0:0:0.2" />
                         </Storyboard>
@@ -101,21 +113,35 @@
         </ControlTemplate.Triggers>
 
         <Grid Width="24">
-            <Image Source="Resources/favorite_heart_skeleton.png" />
-            <Image Source="Resources/favorite_heart.png">
+            <Image Source="Resources/favorite_heart_skeleton.png" Style="{StaticResource ButtonStyle}">
                 <Image.OpacityMask>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                         <LinearGradientBrush.RelativeTransform>
                             <TransformGroup>
-                                <RotateTransform Angle="270" CenterY="0.5" CenterX="0.5"/>
+                                <RotateTransform Angle="90" CenterY="0.5" CenterX="0.5" />
+                            </TransformGroup>
+                        </LinearGradientBrush.RelativeTransform>
+
+                        <GradientStop Offset="1" Color="Black" x:Name="EmptyBlackStop" />
+                        <GradientStop Offset="1" Color="Transparent" x:Name="EmptyTransparentStop" />
+                    </LinearGradientBrush>
+                </Image.OpacityMask>
+            </Image>
+            <Image Source="Resources/favorite_heart.png" Style="{StaticResource ButtonStyle}">
+                <Image.OpacityMask>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <LinearGradientBrush.RelativeTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="270" CenterY="0.5" CenterX="0.5" />
                             </TransformGroup>
                         </LinearGradientBrush.RelativeTransform>
                         
-                        <GradientStop Offset="0" Color="Black" x:Name="BlackStop"/>
-                        <GradientStop Offset="0" Color="Transparent" x:Name="TransparentStop"/>
+                        <GradientStop Offset="0" Color="Black" x:Name="FillBlackStop" />
+                        <GradientStop Offset="0" Color="Transparent" x:Name="FillTransparentStop" />
                     </LinearGradientBrush>
                 </Image.OpacityMask>
             </Image>
         </Grid>
+
     </ControlTemplate>
 </ResourceDictionary>
