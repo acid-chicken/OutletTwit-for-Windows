@@ -86,7 +86,7 @@
                                 <Button Template="{StaticResource TweetActionButtonTemplate}">
                                     <Image Source="Resources/reply.png" Width="24" Style="{StaticResource ButtonStyle}" />
                                 </Button>
-                                <Button Template="{StaticResource TweetActionButtonTemplate}">
+                                <Button Template="{StaticResource RetweetButtonTemplate}">
                                     <Image Source="Resources/retweet.png" Width="24" Style="{StaticResource ButtonStyle}" />
                                 </Button>
                                 <Button Template="{StaticResource TweetActionButtonTemplate}">

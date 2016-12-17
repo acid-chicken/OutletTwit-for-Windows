@@ -37,4 +37,36 @@
     <ControlTemplate x:Key="TweetActionButtonTemplate" TargetType="{x:Type Button}">
         <Label Content="{TemplateBinding Content}" />
     </ControlTemplate>
+
+    <ControlTemplate x:Key="RetweetButtonTemplate" TargetType="{x:Type Button}">
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Trigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="RetweetRotate"
+                                             Storyboard.TargetProperty="Angle"
+                                             To="180" Duration="0:0:0.2" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+                <Trigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard FillBehavior="Stop">
+                            <DoubleAnimation Storyboard.TargetName="RetweetRotate"
+                                             Storyboard.TargetProperty="Angle"
+                                             To="0" Duration="0:0:0.2" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.ExitActions>
+            </Trigger>
+        </ControlTemplate.Triggers>
+
+        <Label Content="{TemplateBinding Content}"
+               RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <RotateTransform x:Name="RetweetRotate" Angle="0" />
+            </Label.RenderTransform>
+        </Label>
+    </ControlTemplate>
 </ResourceDictionary>
