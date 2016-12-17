@@ -46,7 +46,7 @@
                         <Storyboard>
                             <DoubleAnimation Storyboard.TargetName="RetweetRotate"
                                              Storyboard.TargetProperty="Angle"
-                                             To="180" Duration="0:0:0.2" />
+                                             By="180" Duration="0:0:0.2" />
                         </Storyboard>
                     </BeginStoryboard>
                 </Trigger.EnterActions>
@@ -55,7 +55,7 @@
                         <Storyboard FillBehavior="Stop">
                             <DoubleAnimation Storyboard.TargetName="RetweetRotate"
                                              Storyboard.TargetProperty="Angle"
-                                             To="0" Duration="0:0:0.2" />
+                                             By="180" Duration="0:0:0.2" />
                         </Storyboard>
                     </BeginStoryboard>
                 </Trigger.ExitActions>
