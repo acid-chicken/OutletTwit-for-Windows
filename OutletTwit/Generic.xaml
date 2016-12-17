@@ -69,4 +69,53 @@
             </Label.RenderTransform>
         </Label>
     </ControlTemplate>
+    
+    <ControlTemplate x:Key="LikeButtonTemplate" TargetType="{x:Type Button}">
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Trigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="BlackStop"
+                                             Storyboard.TargetProperty="Offset"
+                                             To="1" Duration="0:0:0.2" />
+                            <DoubleAnimation Storyboard.TargetName="TransparentStop"
+                                             Storyboard.TargetProperty="Offset"
+                                             To="1" Duration="0:0:0.2" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+                <Trigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard FillBehavior="Stop">
+                            <DoubleAnimation Storyboard.TargetName="BlackStop"
+                                             Storyboard.TargetProperty="Offset"
+                                             To="0" Duration="0:0:0.2" />
+                            <DoubleAnimation Storyboard.TargetName="TransparentStop"
+                                             Storyboard.TargetProperty="Offset"
+                                             To="0" Duration="0:0:0.2" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.ExitActions>
+            </Trigger>
+        </ControlTemplate.Triggers>
+
+        <Grid Width="24">
+            <Image Source="Resources/favorite_heart_skeleton.png" />
+            <Image Source="Resources/favorite_heart.png">
+                <Image.OpacityMask>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <LinearGradientBrush.RelativeTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="270" CenterY="0.5" CenterX="0.5"/>
+                            </TransformGroup>
+                        </LinearGradientBrush.RelativeTransform>
+                        
+                        <GradientStop Offset="0" Color="Black" x:Name="BlackStop"/>
+                        <GradientStop Offset="0" Color="Transparent" x:Name="TransparentStop"/>
+                    </LinearGradientBrush>
+                </Image.OpacityMask>
+            </Image>
+        </Grid>
+    </ControlTemplate>
 </ResourceDictionary>

@@ -92,9 +92,7 @@
                                 <Button Template="{StaticResource TweetActionButtonTemplate}">
                                     <Image Source="Resources/quote.png" Width="24" Style="{StaticResource ButtonStyle}" />
                                 </Button>
-                                <Button Template="{StaticResource TweetActionButtonTemplate}">
-                                    <Image Source="Resources/favorite_heart_skeleton.png" Width="24" Style="{StaticResource ButtonStyle}" />
-                                </Button>
+                                <Button Template="{StaticResource LikeButtonTemplate}" />
                             </StackPanel>
                         </StackPanel>
                     </DockPanel>
