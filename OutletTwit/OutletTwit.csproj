@@ -101,44 +101,24 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\logo.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\close.png" />
     <Resource Include="Resources\maximize.png" />
     <Resource Include="Resources\minimize.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\favorite_hand.png" />
     <Resource Include="Resources\favorite_heart.png" />
     <Resource Include="Resources\favorite_star.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\quote.png" />
     <Resource Include="Resources\reply.png" />
     <Resource Include="Resources\reply_from_quote.png" />
     <Resource Include="Resources\reply_from_retweet.png" />
     <Resource Include="Resources\retweet.png" />
     <Resource Include="Resources\write.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\default.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\home.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\notification_bell.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\reply_myself.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\noicon.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\favorite_heart_skeleton.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\favorite_qpwakaba.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
