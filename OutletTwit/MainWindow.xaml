@@ -110,7 +110,11 @@
             </Border.BorderBrush>
             
             <DockPanel Margin="15,0">
-                <Image DockPanel.Dock="Left" Margin="7">
+                <Image DockPanel.Dock="Left"
+                       Margin="7"
+                       Name="CaptionButton"
+                       WindowChrome.IsHitTestVisibleInChrome="True"
+                       MouseDown="OnTitleIconClicked">
                     <Image.Source>
                         <BitmapImage DecodePixelWidth="32" DecodePixelHeight="32"
                                      UriSource="Resources/logo.png" />
