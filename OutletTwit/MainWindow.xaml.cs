@@ -59,7 +59,7 @@ namespace OutletTwit.Core.UI.Forms
     private void OnMinimizeButtonClicked(object sender, RoutedEventArgs e)
     {
       // ウィンドウを最小化状態にする
-      WindowState = WindowState.Minimized;
+      SystemCommands.MinimizeWindow(this);
     }
 
     /// <summary>
@@ -74,11 +74,11 @@ namespace OutletTwit.Core.UI.Forms
       switch (WindowState)
       {
         case WindowState.Maximized: // 最大化状態のとき
-          WindowState = WindowState.Normal; // 通常状態に戻す
+          SystemCommands.RestoreWindow(this); // 通常状態に戻す
           break;
 
         default: // それ以外のとき
-          WindowState = WindowState.Maximized; // 最大化状態にする
+          SystemCommands.MaximizeWindow(this); // 最大化状態にする
           break;
       }
     }
@@ -94,19 +94,38 @@ namespace OutletTwit.Core.UI.Forms
       // 何らかの終了処理が必要な場合は、ここに追加してください。
 
       // ウィンドウを閉じる
-      Close();
+      SystemCommands.CloseWindow(this);
     }
 
-    ///<summary>
-    ///タイトル部分のアイコンがクリックされた時のイベントを処理します。
-    ///マウスの位置を取得し、PointToScreenによって相対座標をざったい座標に変換します(多分)。
-    ///システムメニューを表示します。
-    ///</summary>
-    private void OnTitleIconClicked(object sender, MouseEventArgs e)
+    /// <summary>
+    /// タイトル部分のアイコンがクリックされた時のイベントを処理します。
+    /// シングルクリックだった場合、
+    /// マウスのウィンドウ内の位置を取得し、PointToScreenによってデスクトップ上の座標に変換します。
+    /// システムメニューを表示します。
+    /// ダブルクリックだった場合、
+    /// ウィンドウを閉じます。
+    /// </summary>
+    private void OnTitleIconClicked(object sender, MouseButtonEventArgs e)
     {
-      Point mousePoint = e.GetPosition(this);
-      Point mousePointFix = PointToScreen(mousePoint);
-      SystemCommands.ShowSystemMenu(this, new Point(mousePointFix.X, mousePointFix.Y));
+      // シングルクリックの場合
+      if (e.ClickCount == 1)
+      {
+
+        // マウスポインターのウィンドウ内での座標を取得
+        Point mousePoint = e.GetPosition(this);
+
+        // デスクトップ上の座標に変換
+        Point mousePointFix = PointToScreen(mousePoint);
+
+        // システムメニューを表示
+        // XとYに設定した+1はダブルクリックを有効にするためです
+        SystemCommands.ShowSystemMenu(this, new Point(mousePointFix.X + 1, mousePointFix.Y + 1));
+      }
+      // ダブルクリックの場合
+      else if (e.ClickCount == 2)
+      {
+        SystemCommands.CloseWindow(this);
+      }
     }
   }
 }
