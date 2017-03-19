@@ -97,6 +97,62 @@
             </StackPanel>
           </DockPanel>
         </Border>
+        <Canvas x:Name="canvas" Height="256" Width="256">
+          <Path x:Name="path1" Fill="#1DA1F2" Canvas.Left="64" Canvas.Top="32"
+                Data="M60,120c0,0-8-12-8-16s8-96,8-96s0-4,4-4s4,4,4,4v112c0,0,0,4-4,4S60,120,60,120z">
+            <Path.RenderTransform>
+              <RotateTransform x:Name="rotate1" CenterX="64" CenterY="120" Angle="0" />
+            </Path.RenderTransform>
+            <Path.Triggers>
+              <EventTrigger RoutedEvent="Path.Loaded">
+                <BeginStoryboard>
+                  <Storyboard RepeatBehavior="Forever">
+                    <DoubleAnimation
+                        Storyboard.TargetName="rotate1"
+                        Storyboard.TargetProperty="Angle"
+                        From="0" By="120" Duration="0:0:.75" />
+                  </Storyboard>
+                </BeginStoryboard>
+              </EventTrigger>
+            </Path.Triggers>
+          </Path>
+          <Path x:Name="path2" Fill="#1DA1F2" Canvas.Left="64" Canvas.Top="32"
+                Data="M60,120c0,0-8-12-8-16s8-96,8-96s0-4,4-4s4,4,4,4v112c0,0,0,4-4,4S60,120,60,120z">
+            <Path.RenderTransform>
+              <RotateTransform x:Name="rotate2" CenterX="64" CenterY="120" Angle="120" />
+            </Path.RenderTransform>
+            <Path.Triggers>
+              <EventTrigger RoutedEvent="Path.Loaded">
+                <BeginStoryboard>
+                  <Storyboard RepeatBehavior="Forever">
+                    <DoubleAnimation
+                        Storyboard.TargetName="rotate2"
+                        Storyboard.TargetProperty="Angle"
+                        From="120" By="120" Duration="0:0:.75" />
+                  </Storyboard>
+                </BeginStoryboard>
+              </EventTrigger>
+            </Path.Triggers>
+          </Path>
+          <Path x:Name="path3" Fill="#1DA1F2" Canvas.Left="64" Canvas.Top="32"
+                Data="M60,120c0,0-8-12-8-16s8-96,8-96s0-4,4-4s4,4,4,4v112c0,0,0,4-4,4S60,120,60,120z">
+            <Path.RenderTransform>
+              <RotateTransform x:Name="rotate3" CenterX="64" CenterY="120" Angle="240" />
+            </Path.RenderTransform>
+            <Path.Triggers>
+              <EventTrigger RoutedEvent="Path.Loaded">
+                <BeginStoryboard>
+                  <Storyboard RepeatBehavior="Forever">
+                    <DoubleAnimation
+                        Storyboard.TargetName="rotate3"
+                        Storyboard.TargetProperty="Angle"
+                        From="240" By="120" Duration="0:0:.75" />
+                  </Storyboard>
+                </BeginStoryboard>
+              </EventTrigger>
+            </Path.Triggers>
+          </Path>
+        </Canvas>
       </StackPanel>
     </Grid>
 
